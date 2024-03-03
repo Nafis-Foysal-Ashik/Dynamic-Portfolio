@@ -35,8 +35,7 @@
             <li class="link"><a href="#home">Home</a></li>
             <li class="link"><a href="#about">About</a></li>
             <li class="link"><a href="#project">Projects</a></li>
-            <li class="link"><a href="#service">Services</a></li>
-            <li class="link"><a href="#client">Clients</a></li>
+            <li class="link"><a href="#service">Skills</a></li>
             <li class="link"><a href="#blog">Blog</a></li>
             <li class="link btn"><a href="#contact">Contact</a></li>
           </ul>
@@ -398,16 +397,16 @@
     
     
     <section class="section__container contact__container" id="contact">
-      <p class="section__subheader">Contact Us</p>
-      <h2 class="section__header">Get In Touch</h2>
-      <form action="/" class="contact__form">
-        <div class="input__row">
+      <!-- <p class="section__subheader">Contact Us</p>
+      <h2 class="section__header">Get In Touch</h2> -->
+      <form action="login.php" class="contact__form">
+        <!-- <div class="input__row">
           <input type="text" placeholder="First Name" />
           <input type="text" placeholder="Last Name" />
-        </div>
-        <input type="text" placeholder="Email" />
-        <input type="text" placeholder="Description" />
-        <button class="btn">Submit</button></a>
+        </div> -->
+        <!-- <input type="text" placeholder="Email" />
+        <input type="text" placeholder="Description" /> -->
+        <button class="btn">Log In</button></a>
       </form>
     </section>
 
@@ -458,9 +457,9 @@
         <div class="footer__col">
           <h4>Support</h4>
           <div class="footer__links">
-            <a href="#">Contact</a>
-            <a href="#">My Blog</a>
-            <a href="#">Privacy Policy</a>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#project">Projects</a>
           </div>
         </div>
       </div>

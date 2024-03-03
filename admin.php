@@ -95,7 +95,12 @@ $updateMessageProjects = '';
 $reloadPage = false; // Flag to control reloading
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_project'])) {
+
+// This nested condition checks if the 'project_id' field is set in the POST data and if it is an array. It suggests that the form allows multiple projects to be updated simultaneously.
+
     if (isset($_POST['project_id']) && is_array($_POST['project_id'])) {
+
+        // The code then iterates over each 'project_id' in the array. The loop variable $projectId holds the current project's ID.
         foreach ($_POST['project_id'] as $index => $projectId) {
             $newProjectUrl = isset($_POST['project_url'][$projectId]) ? mysqli_real_escape_string($connection, $_POST['project_url'][$projectId]) : '';
             $newProjectImageSource = isset($_POST['project_image_source'][$projectId]) ? mysqli_real_escape_string($connection, $_POST['project_image_source'][$projectId]) : '';
@@ -164,10 +169,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_project'])) {
 }
 
 
+
+
+
 // Reload the page using PHP header() function if the flag is set
 if ($reloadPage) {
     header("Refresh:0"); // Reload the page after 0 seconds
-    exit(); // Ensure that no further code is executed after the reload header
+    exit(); 
 }
 
 
@@ -373,9 +381,6 @@ if ($reloadPage) {
     </div>
 </form>
 
-<!-- Display Profile Image -->
-<!-- Display Profile Image -->
-
 
 
 
@@ -410,7 +415,7 @@ if ($reloadPage) {
                 <table>
                     <thead>
                         <tr>
-                            <th>Project ID</th>
+                            <!-- <th>Project ID</th> -->
                             <th>Project URL</th>
                             <th>Image Source</th>
                             <th>Action</th>
@@ -421,7 +426,7 @@ if ($reloadPage) {
                         <?php
                         while ($row = mysqli_fetch_assoc($resultProjectsAll)) {
                             echo '<tr>';
-                            echo '<td>' . $row['id'] . '</td>';
+                            // echo '<td>' . $row['id'] . '</td>';
                             echo '<td><input type="text" name="project_url[' . $row['id'] . ']" value="' . $row['url'] . '"></td>';
                             echo '<td><input type="text" name="project_image_source[' . $row['id'] . ']" value="' . $row['image_source'] . '"></td>';
                             echo '<td>
